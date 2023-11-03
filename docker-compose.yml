@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  jupyter:
+    build:
+      context: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/home/jovyan
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    networks:
+      - selenium-net
+    platform: linux/arm64
+
+  selenium-chrome:
+    image: seleniarm/standalone-chromium:latest
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+      - "7900:7900"
+    networks:
+      - selenium-net
+    platform: linux/arm64
+
+networks:
+  selenium-net:

@@ -1,0 +1,9 @@
+.bash_history
+.ipython*
+.jupyter*
+.local*
+.npm*
+*.ipynb_checkpoints*
+.cache*
+.config*
+*__pycache__*
